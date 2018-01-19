@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import RootRouters from './components/router'
+import Button from 'antd/lib/button';
+import Routers from './components/router'
 
 
 
-ReactDOM.render(<RootRouters />, document.getElementById('root'));
+ReactDOM.render(<Routers />, document.getElementById('mainContainer'));
 
