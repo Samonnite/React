@@ -1,21 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {Router,Route} from 'react-router';
-import {Button} from 'antd';
-import 'antd/dist/antd.css';
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import { Router, Route } from 'react-router'
 
-class RootRouters extends React.Component{
-  render(){
+export default class Routers extends Component {
+  render() {
     return (
-      
-     
       <div >
-        <Button type="primary">Button</Button>
-      </div>
 
-      
+      </div>
     );
   };
 }
 
-export default RootRouters;
+
