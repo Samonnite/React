@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route } from 'react-router'
+import { Router, Route, Link } from 'react-router-dom'
 import PCIndex from './components/pc_index'
 import MobileIndex from './components/mobile_index'
 import MediaQuery from 'react-responsive'
@@ -23,5 +23,5 @@ export default class Index extends Component {
 }
 
 
-ReactDOM.render(<Index />,  document.getElementById('mainContainer'));
+ReactDOM.render(<Index />, document.getElementById('mainContainer'));
 
