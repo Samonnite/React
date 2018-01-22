@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router'
 import {
   Row, Col, Menu, Icon, Tabs, message,
   Form, Input, Button, CheckBox, Modal
@@ -36,20 +36,36 @@ class MobileHeader extends Component {
     }
   }
   handleSubmit(e) {
-    //  页面开始想API进行提交数据
+    //页面开始向 API 进行提交数据
     e.preventDefault();
     var myFetchOptions = {
       method: 'GET'
     };
     var formData = this.props.form.getFieldsValue();
-    console.log(formData)
-    fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=register&username=userName&password=password&r_userName=" + formData.r_userName + "&r_password=" + formData.r_password + "&r_confirmPassword=" + formData.r_confirmPassword, myFetchOptions).
-      then(response => response.json()).then(json => {
+    console.log(formData);
+    fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=" + this.state.action
+      + "&username=" + formData.userName + "&password=" + formData.password
+      + "&r_userName=" + formData.r_userName + "&r_password="
+      + formData.r_password + "&r_confirmPassword="
+      + formData.r_confirmPassword, myFetchOptions)
+      .then(response => response.json())
+      .then(json => {
         this.setState({ userNickName: json.NickUserName, userid: json.UserId });
-
+        localStorage.userid = json.UserId;
+        localStorage.userNickName = json.NickUserName;
       });
-    message.success("请求成功");
+    if (this.state.action === "login") {
+      this.setState({ hasLogined: true });
+    }
+    message.success("请求成功！");
     this.setModalVisible(false);
+  }
+  callback(key) {
+    if (key === 1) {
+      this.setState({ action: 'login' })
+    } else if (key === 2) {
+      this.setState({ action: 'register' })
+    }
   }
   login() {
     this.setModalVisible(true);
@@ -62,7 +78,7 @@ class MobileHeader extends Component {
         <Icon type="inbox" />
       </Link>
       :
-      <Icon type="setting" onClick={this.login.bind(this)} />
+      <Icon type="user" onClick={this.login.bind(this)} />
 
     return (
       <div id="mobileheader">
@@ -73,6 +89,17 @@ class MobileHeader extends Component {
         </header>
         <Modal title="用户中心" wrapClassName="vertical-center-modal" visible={this.state.modalVisible} onCancel={() => this.setModalVisible(false)} onOk={() => this.setModalVisible(false)} okText="关闭">
           <Tabs type="card">
+            <TabPane tab="登录" key="1">
+              <Form horizontal='true' onSubmit={this.handleSubmit.bind(this)}>
+                <FormItem label="账户">
+                  <Input placeholder="请输入您的账号" {...getFieldProps('userName') } />
+                </FormItem>
+                <FormItem label="密码">
+                  <Input type="password" placeholder="请输入您的密码" {...getFieldProps('password') } />
+                </FormItem>
+                <Button type="primary" htmlType="submit">登录</Button>
+              </Form>
+            </TabPane>
             <TabPane tab="注册" key="2">
               <Form horizontal="true" onSubmit={this.handleSubmit.bind(this)}>
                 <FormItem label="账户">

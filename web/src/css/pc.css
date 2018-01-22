@@ -1,3 +1,7 @@
+li {
+    list-style: none;
+}
+
 .logo {
     align-items: center;
     display: flex;
@@ -13,6 +17,29 @@
     padding-left: 5px;
 }
 
-.footer{
+.footer {
     text-align: center;
+}
+
+.register {
+    float: right !important;
+}
+
+.ant-menu-horizontal>.ant-menu-item>a,
+.ant-menu-horizontal>.ant-menu-submenu>a {
+    display: inline-block !important;
+}
+
+.container {
+    padding-top: 10px;
+}
+
+.leftContainer {
+    width: 400px;
+    float: left;
+}
+
+.carousel {
+    width: 400px;
+    float: left;
 }

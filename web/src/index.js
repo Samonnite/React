@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, Link } from 'react-router-dom'
 import PCIndex from './components/pc_index'
 import MobileIndex from './components/mobile_index'
 import MediaQuery from 'react-responsive'
