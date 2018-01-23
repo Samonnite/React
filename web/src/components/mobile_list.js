@@ -53,7 +53,7 @@ export default class MobileList extends Component {
         return (
             <div>
                 <Row>
-                    <Col span={22}>
+                    <Col span={24}>
                         {newList}
                     </Col>
                 </Row>

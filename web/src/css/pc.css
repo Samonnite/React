@@ -1,4 +1,4 @@
-logo {
+﻿.logo {
     align-items: center;
     display: flex;
 }
@@ -26,7 +26,7 @@ logo {
 }
 
 .container{
-    padding-top: 10px;
+  padding-top: 10px;
 }
 
 .leftContainer {
@@ -40,14 +40,14 @@ logo {
 }
 
 .ant-card{
-    margin-top: 5px !important;
+  margin-top: 5px !important;
 }
 
 .ant-card-head-title{
-    text-align: left !important;
+  text-align: left !important;
 }
 .ant-card-body{
-    text-align: left !important;
+  text-align: left !important;
 }
 .usercenter {
     float: right !important;
@@ -91,10 +91,9 @@ logo {
 }
 
 .tabs_product {
-    width: 180px;
+    width: 300px;
     padding-left: 10px;
     float: left;
-    color: red;
 }
 
 .tabs_news li {
@@ -119,7 +118,7 @@ logo {
 }
 
 .clearfix{
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .ant-tabs-bar {
@@ -131,8 +130,8 @@ logo {
 }
 
 .leftContainer{
-    width:400px;
-    float: left;
+  width:400px;
+  float: left;
 }
 
 /*image block******START*****/
@@ -149,7 +148,7 @@ logo {
 }
 
 .register{
-    float: right !important;
+  float: right !important;
 }
 
 /*image block******END*****/
@@ -166,7 +165,7 @@ iframe {
 
 .ant-menu-horizontal > .ant-menu-item > a, .ant-menu-horizontal > .ant-menu-submenu > a
 {
-    display: inline-block !important;
+  display: inline-block !important;
 }
 
 
@@ -179,16 +178,16 @@ iframe {
 
 
 /*Footer******End*****/
-.title,.article-title .title {
+ .title,.article-title .title {
     font-size: 0.44rem !important;
     line-height: 1.4em
 }
 
-.article-src-time {
+ .article-src-time {
     font-size: 0.3rem !important;
 }
 
-.article-content .txt {
+ .article-content .txt {
     font-size: 0.36rem !important;
 }
 
