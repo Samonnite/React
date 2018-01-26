@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Tabs, Row, Col, Carousel } from 'antd'
 import PCNewsBlock from './pc_news_block'
 import PCNewsImageBlock from './pc_news_image_block'
+import PCProduct from './pc_products'
 import Carousel_1 from '../images/carousel_1.jpg'
 import Carousel_2 from '../images/carousel_2.jpg'
 import Carousel_3 from '../images/carousel_3.jpg'
@@ -41,11 +42,11 @@ export default class PCNewsContainer extends Component {
                 <PCNewsBlock count={22} type='guoji' width='100%' bordered='false' />
               </TabPane>
             </Tabs>
-            {/* <Tabs class="tabs_product">
+            <Tabs class="tabs_product">
               <TabPane tab="ReactNews 产品" key="1">
-                <PCProduct></PCProduct>
+                <PCProduct />
               </TabPane>
-            </Tabs> */}
+            </Tabs>
             <div>
               <PCNewsImageBlock count={14} type='guonei' width="100%" cartTitle="国内新闻" imageWidth="132px" />
               <PCNewsImageBlock count={14} type='yule' width="100%" cartTitle="娱乐新闻" imageWidth="132px" />
