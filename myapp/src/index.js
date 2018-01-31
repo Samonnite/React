@@ -2,34 +2,32 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
-import { BrowserRouter, Route, Link, Switch,Redirect} from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { createStore, applyMiddleware, compose } from 'redux'
-// import { counter } from './index.redux'
 import reducers from './reducer'
-import Auth from './Auth'
-import Dashboard from './Dashboard'
+import Login from './container/login/login'
+import Register from './container/register/register'
+import AuthRoute from './component/authroute/authroute'
+import './config'
+import './index.css'
 
 
 const store = createStore(reducers, compose(
   applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : f => f
 ))
-class Test extends React.Component{
-  constructor(props){
-    super(props)
-  }
-  render(){
-    return <h1>测试组件 {this.props.match.parmas.location} </h1> 
-  }
+function Boss(){
+  return  <h1>dsad</h1>
 }
 ReactDom.render(
   (<Provider store={store}>
     <BrowserRouter>
-      <Switch>
-        <Route path='/login' component={Auth} />
-        <Route path='/dashboard' component={Dashboard} />
-        <Redirect to='/dashboard'></Redirect>
-      </Switch>
+      <div>
+        <AuthRoute></AuthRoute>
+        <Route path='/boss' component={Boss} />
+        <Route path='/login' component={Login} />
+        <Route path='/register' component={Register} />
+      </div>
     </BrowserRouter>
   </Provider>)
   , document.getElementById('root')
