@@ -1,3 +1,4 @@
+
 const express = require('express')
 const utils = require('utility')
 const Router = express.Router()
@@ -8,6 +9,20 @@ Router.get('/list', function (req, res) {
   // User.remove({},function(e,d){})
   User.find({}, function (err, doc) {
     return res.json(doc)
+  })
+})
+Router.post('/update',function(req,res){
+  const userid=req.cookies.userid
+  if(!userid){
+    return json.jumps({code:1})
+  }
+  const body=req.body
+  User.findByIdAndUpdate(userid,body,function(err,doc){
+    const data=Object.assign({},{
+      user:doc.user,
+      type:doc.type
+    },body)
+    return res.json({code:0,data})
   })
 })
 Router.post('/login', function (req, res) {
