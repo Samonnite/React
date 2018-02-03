@@ -144,7 +144,7 @@ ansi-styles@^3.0.0, ansi-styles@^3.1.0:
   dependencies:
     color-convert "^1.9.0"
 
-antd-mobile@^2.1.5:
+antd-mobile@^2.0.0-beta.6:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/antd-mobile/-/antd-mobile-2.1.5.tgz#259f4526b7ff4e6dfd4bba0f7b1eebea32f247ea"
   dependencies:
@@ -1172,6 +1172,10 @@ braces@^1.8.2:
 brorand@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
+
+browser-cookies@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/browser-cookies/-/browser-cookies-1.2.0.tgz#fca3ffb9b6a63aadc4d8c0999c6b57d0fa7d29b5"
 
 browser-resolve@^1.11.2:
   version "1.11.2"
