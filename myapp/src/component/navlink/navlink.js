@@ -1,12 +1,12 @@
 
 import React from 'react'
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import {TabBar} from 'antd-mobile'
 import {withRouter} from 'react-router-dom'
 @withRouter
 class NavLinkBar extends React.Component{
 	static propTypes = {
-		data: propTypes.array.isRequired
+		data: PropTypes.array.isRequired
 	}
 	render(){
 		
